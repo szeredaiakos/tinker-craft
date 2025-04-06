@@ -1,0 +1,10 @@
+.appStateManagerEx {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  .first-mod-container, .second-mod-container {
+    width: 42%;
+    background-color: black;
+  }
+}
