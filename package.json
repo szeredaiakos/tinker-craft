@@ -23,6 +23,7 @@
     "cypress": "^14.2.0",
     "sass": "^1.86.0",
     "sass-loader": "^16.0.5",
+    "scss": "^0.2.4",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",

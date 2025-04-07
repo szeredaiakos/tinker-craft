@@ -1,43 +1,16 @@
+
+
+:root {
+  --background: #222;
+  --foreground: #eee;
+  --brand: #f0a;
+}
+
+
 html,
 body {
   margin: 0;
   padding: 0;
-
-  // --bgColor: white;
-  // --fgColor: black;
-
-  --bgColor: #222;
-  --fgColor: white;
-
-  background: var(--bgColor);
-}
-
-
-.app {
-  color: rgb(142, 105, 226);
-  display: flex;
-  justify-content: center;
-
-  p {
-    margin-top: 4px;
-    font-size: 16px;
-    color: color-mix(in srgb, var(--fgColor) 75%, var(--bgColor));
-  }
-
-}
-
-.pond {
-
-  .frog {
-    width: 48px;
-    height: 48px;
-    background: green;
-
-    
-  }
-  .frog:nth-child(2) {
-    align-self: flex-end;
-  }
-
-
+  background: var(--background);
+  color: var(--foreground);
 }

@@ -1,0 +1,14 @@
+
+.appMenu {
+  position: fixed;
+  width: 320px;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  box-shadow: 0px 0px 8px #0002;
+  border-width: 0px 2px 0px 0px;
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--brand) 3%, var(--background));
+  background: color-mix(in srgb, var(--foreground) 1%, var(--background));
+  padding-top: 64px;
+}

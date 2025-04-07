@@ -1,10 +1,14 @@
 const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
+const indexList = require('./indexList');
 
-
+const entries = [
+  path.normalize('../src/index.tsx'),
+  ...indexList,
+];
 
 module.exports = {
-  entry: path.normalize('../src/index.tsx'),
+  entry: entries,
   mode: 'development',
   devtool: false,
 
@@ -12,6 +16,13 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      }, {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
@@ -19,10 +30,6 @@ module.exports = {
         test: /\.jsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      }, {
-        test: /\.scss$/,
-        use: [ 'style-loader', 'css-loader', 'sass-loader' ],
-
       },
     ],
   },
@@ -47,20 +54,13 @@ module.exports = {
     aggregateTimeout: 150,
     ignored: '/node_modules/',
   },
-  
+
   devServer: {
     static: path.resolve(__dirname, '../dist'),
     historyApiFallback: true,
     compress: false,
     port: 8088,
   },
-
-
-
-
-
-
-
 
 
 
