@@ -9,6 +9,8 @@ interface IMenuState {
   menuItems: Array<IMenuEl>;
 }
 
+type TListener = (state: IMenuState) => void;
+
 
 class _MenuController {
 
@@ -18,27 +20,31 @@ class _MenuController {
     return _MenuController.currentInstance;
   }
 
-  state: IMenuState = {
+  store: IMenuState = {
     menuItems: [],
   };
   private listeners: Set<(state: IMenuState) => void> = new Set();
 
 
-  unSubscribe: () => void = (() => {
-  }).bind(this);
+  unSubscribe(listener: TListener) {
+    this.listeners.delete(listener);
+  }
 
 
   subscribe(listener: (state: IMenuState) => void) {
     this.listeners.add(listener);
-    return this.unSubscribe;
+    return () => this.unSubscribe(listener);
   }
 
 
   addMenuEl(element: IMenuEl) {
-    this.state.menuItems.push(element);
+    const store = { ...this.store };
+    store.menuItems.push(element);
+
     for (const listener of this.listeners) {
-      listener(this.state);
+      listener(store);
     }
+    this.store = store;
   }
 
 

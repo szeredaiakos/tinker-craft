@@ -1,19 +1,26 @@
 const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
+const indexList = require('./indexList');
 
+const entries = [
+  ...indexList,
+  path.normalize('../src/index.tsx'),
+];
 
 module.exports = {
-  entry: path.normalize('../src/index.tsx'),
+  entry: entries,
   mode: 'production',
+  devtool: false,
   module: {
     rules: [
-
-
-
-
-
-
       {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      }, {
         test: /\.tsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
@@ -21,18 +28,7 @@ module.exports = {
         test: /\.jsx?$/,
         use: 'ts-loader',
         exclude: /node_modules/,
-      }, {
-        test: /\.scss$/,
-        use: [ 'style-loader', 'css-loader', 'sass-loader' ],
-
       },
-
-
-
-
-
-
-
     ],
   },
 

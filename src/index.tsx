@@ -1,16 +1,16 @@
 import '../src/Globals';
 import './AppIndex.scss';
 import { createRoot } from 'react-dom/client';
-import { UseCallbackCl } from './useCallback/UseCallback';
-import StateManagerEx from './simplrStateManager/StateManagerEx';
 import { Layout } from './Layout/Layout';
+import { RouterProvider } from './com/Router/RouteController';
 
 function SomeApp() {
   return (
     <>
-      <Layout>
-        hello
-      </Layout>
+      
+        <Layout>
+          <RouterProvider />
+        </Layout>
     </>
   )
 }

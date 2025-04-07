@@ -3,13 +3,14 @@ import './Menu.scss';
 import { MenuController } from './MenuController';
 
 export default function Menu() {
-  const [menuData, setMenuData] = useState(MenuController.state);
+  const [storeData, setStoreData] = useState(MenuController.store);
 
   useEffect(() => {
-    return MenuController.subscribe(setMenuData);
+    const unsub = MenuController.subscribe(setStoreData);
+    return unsub;
   }, []);
 
   return (
-    <div className={'appMenu'}>le menu with {menuData.menuItems.length} items</div>
+    <div className={'appMenu'}>le menu with {storeData.menuItems.length} itemz</div>
   );
 }

@@ -3,8 +3,8 @@ const CopyPlugin = require("copy-webpack-plugin");
 const indexList = require('./indexList');
 
 const entries = [
-  path.normalize('../src/index.tsx'),
   ...indexList,
+  path.normalize('../src/index.tsx'),
 ];
 
 module.exports = {
