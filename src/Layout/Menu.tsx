@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Menu.scss';
 import { MenuController } from './MenuController';
+import { MenuItem } from './menu/MenuItem';
 
 export default function Menu() {
   const [storeData, setStoreData] = useState(MenuController.store);
@@ -11,6 +12,11 @@ export default function Menu() {
   }, []);
 
   return (
-    <div className={'appMenu'}>le menu with {storeData.menuItems.length} itemz</div>
+    <div className={'appMenu'}>
+      {storeData.menuItems.map(mi => {
+        const key = `${ mi.label }-${ mi.url }`;
+        return <MenuItem label={mi.label} url={mi.url} key={key} />;
+      })}
+    </div>
   );
 }

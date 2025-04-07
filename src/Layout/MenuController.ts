@@ -1,8 +1,7 @@
 
 interface IMenuEl {
   label: string;
-  url?: string;
-  action?: () => any;
+  url: string;
 }
 
 interface IMenuState {
@@ -15,15 +14,15 @@ type TListener = (state: IMenuState) => void;
 class _MenuController {
 
   private static currentInstance: _MenuController;
-  public static get instace() {
+  static get instace() {
     if (!_MenuController.currentInstance) { _MenuController.currentInstance = new _MenuController() }
     return _MenuController.currentInstance;
   }
 
+  private listeners: Set<(state: IMenuState) => void> = new Set();
   store: IMenuState = {
     menuItems: [],
   };
-  private listeners: Set<(state: IMenuState) => void> = new Set();
 
 
   unSubscribe(listener: TListener) {

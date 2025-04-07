@@ -10,5 +10,5 @@
   border-style: solid;
   border-color: color-mix(in srgb, var(--brand) 3%, var(--background));
   background: color-mix(in srgb, var(--foreground) 1%, var(--background));
-  padding-top: 64px;
+  padding-top: calc(64px + 24px);
 }
