@@ -36,7 +36,7 @@ class _MenuController {
   }
 
 
-  addMenuEl(element: IMenuEl) {
+  add(element: IMenuEl) {
     const store = { ...this.store };
     store.menuItems.push(element);
 

@@ -1,11 +1,11 @@
 import { Route } from "react-router";
 import { RouteController } from "../com/Router/RouteController";
 import { MenuController } from "../Layout/MenuController";
-import ApplesList from "./ApplesList";
+import ApplesList from "./OrangesList";
 
 MenuController.add({
-  label: "Apples",
-  url: '/apples'
+  label: "Oranges",
+  url: '/oranges'
 });
 
-RouteController.add(<Route path="apples" element={<ApplesList />} />);
+RouteController.add(<Route path="/oranges" element={<ApplesList />} />);

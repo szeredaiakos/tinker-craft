@@ -4,4 +4,4 @@ import { Dashboard } from "./Dashboard";
 import { MenuController } from "../Layout/MenuController";
 
 RouteController.add(<Route index element={<Dashboard />} />);
-MenuController.addMenuEl({ label: 'Dasboard', url: '/' });
+MenuController.add({ label: 'Dasboard', url: '/' });
