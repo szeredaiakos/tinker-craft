@@ -106,7 +106,7 @@ class ContextStore<StateType> {
   };
 
 
-  public useStore = () => useContext(this.dataContext);
+  public use = () => useContext(this.dataContext);
 }
 
 

@@ -5,7 +5,7 @@ import "./ApplesList.scss";
 
 interface IApplesList { }
 export default function ApplesList(props: IApplesList) {
-  const { apples } = AppleStore.useStore();
+  const { apples } = AppleStore.use();
 
   const applesData = {
     headers: [
