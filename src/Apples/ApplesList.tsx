@@ -10,7 +10,7 @@ export default function ApplesList(props: IApplesList) {
   const applesData = {
     headers: [
       { label: 'Cutivar', name: 'cultivar' },
-      { label: 'Coluor', name: 'colour' },
+      { label: 'Colour', name: 'colour' },
       { label: 'Size (cm)', name: 'medianSize' },
       { label: 'Stock (metric tons)', name: 'stock' },
     ],
@@ -20,7 +20,7 @@ export default function ApplesList(props: IApplesList) {
 
   const handleAddApple = () => {
     AppleActions.addApple({
-      cultivar: 'akos',
+      cultivar: 'Adersleber Calville',
       colour: 'yelowish',
       medianSize: 25,
       stock: Math.round(Math.random() * 100) / 100,
