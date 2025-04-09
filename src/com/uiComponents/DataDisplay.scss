@@ -1,0 +1,22 @@
+table.app-data-display {
+  width: 100%;
+  border-spacing: 0px;
+  text-indent: 12px;
+
+  tbody::before {
+    content: '';
+    display: block;
+    height: 24px;
+    overflow: hidden;
+  }
+
+  thead th {
+    font-size: 17px;
+    min-height: 32px;
+    padding: 12px 0;
+    gap: 0;
+    border: 1px solid color-mix(in srgb, var(--background), var(--foreground) 8%);
+    text-align: left;
+  }
+
+}
