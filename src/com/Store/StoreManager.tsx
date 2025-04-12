@@ -63,26 +63,6 @@ class ContextStore<StateType> {
 
 
   private dataContext = createContext<StateType>(this.contextObserver.state);
-  public getProviderComponent() {
-    const contextObserver = this.contextObserver;
-    const Context = this.dataContext;
-
-    const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-      const [state, setState] = useState(contextObserver.state);
-
-      useEffect(() => {
-        const unSub = contextObserver.sub(setState);
-        return unSub;
-      }, []);
-
-      return (
-        <Context.Provider value={state}>
-          {children}
-        </Context.Provider>
-      );
-    };
-    return Provider;
-  }
 
 
   public Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
