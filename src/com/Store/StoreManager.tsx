@@ -54,12 +54,14 @@ class ContextStore<StateType> {
    * @returns the action you can use in your component
    */
   trigger<T>(
-    updater: (state: StateType, payload: T) => Partial<StateType> | null | false
-  ): (payload: T, age: number) => void {
+    updater: (state: StateType, payload?: T) =>
+      (Partial<StateType> | null | false) |
+      Promise<Partial<StateType> | null | false>
+  ): (payload?: T, age?: number) => void {
 
-    return (actPayload: T, age?: number) => {
+    return async (actPayload?: T, age?: number) => {
       const currentState = this.contextObserver.state;
-      const newState = updater(structuredClone(currentState), actPayload);
+      const newState = await updater(structuredClone(currentState), actPayload);
       if (newState === null || newState === false) { return }
       this.contextObserver.setState(newState);
     }

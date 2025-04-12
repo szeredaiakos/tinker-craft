@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { DataDisplay } from "../com/uiComponents/DataDisplay";
 import { AppleActions, AppleStore } from "./Apples.store";
 import "./ApplesList.scss";
@@ -19,13 +19,21 @@ export default function ApplesList(props: IApplesList) {
 
 
   const handleAddApple = () => {
-    AppleActions.addApple({
-      cultivar: 'Adersleber Calville',
-      colour: 'yelowish',
-      medianSize: 25,
-      stock: Math.round(Math.random() * 100) / 100,
-    }, 0);
+
+    // AppleActions.addApple({
+    //   cultivar: 'Adersleber Calville',
+    //   colour: 'yelowish',
+    //   medianSize: 25,
+    //   stock: Math.round(Math.random() * 100) / 100,
+    // });
+
+    AppleActions.getApples();
   }
+
+
+  useEffect(() => {
+    AppleActions.getApples();
+  }, []);
 
 
   return (
