@@ -19,15 +19,12 @@ export default function ApplesList(props: IApplesList) {
 
 
   const handleAddApple = () => {
-
-    // AppleActions.addApple({
-    //   cultivar: 'Adersleber Calville',
-    //   colour: 'yelowish',
-    //   medianSize: 25,
-    //   stock: Math.round(Math.random() * 100) / 100,
-    // });
-
-    AppleActions.getApples();
+    AppleActions.addApple({
+      cultivar: 'Adersleber Calville',
+      colour: 'yelowish',
+      medianSize: 25,
+      stock: Math.round(Math.random() * 100) / 100,
+    });
   }
 
 

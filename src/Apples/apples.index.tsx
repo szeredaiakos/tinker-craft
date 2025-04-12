@@ -9,5 +9,4 @@ MenuController.add({
   url: '/apples'
 });
 
-//const Provider = AppleStore.getProviderComponent();
 RouteController.add(<Route path="apples" element={<AppleStore.Provider><ApplesList /></AppleStore.Provider>} />);

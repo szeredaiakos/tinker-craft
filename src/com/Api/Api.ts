@@ -10,7 +10,7 @@ class _Api {
           { cultivar: 'Wagener', colour: 'burgundy', medianSize: 13, stock: 2.54 },
           { cultivar: 'Knobbed Russet', colour: 'brown', medianSize: 13, stock: 2.54 },
         ]);
-      }, 2000);
+      }, 1000);
     });
   }
 }

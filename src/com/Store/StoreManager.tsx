@@ -12,7 +12,6 @@ class _StoreManager {
 export const StoreManager = new _StoreManager();
 
 
-
 class SharedContextObserver<StateType> {
   constructor(
     public state: StateType,
@@ -47,13 +46,8 @@ class ContextStore<StateType> {
 
   private contextObserver = new SharedContextObserver(this.initialState);
   public state = this.contextObserver.state;
-
-  /**
-   * 
-   * @param updater method of updating the shared state, if returns false or null, no update will occur.
-   * @returns the action you can use in your component
-   */
-  trigger<T>(
+  
+  public trigger<T>(
     updater: (state: StateType, payload?: T) =>
       (Partial<StateType> | null | false) |
       Promise<Partial<StateType> | null | false>
@@ -91,7 +85,7 @@ class ContextStore<StateType> {
   }
 
 
-  Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  public Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const Context = this.dataContext;
     const contextObserver = this.contextObserver;
     const [state, setState] = useState(contextObserver.state);
