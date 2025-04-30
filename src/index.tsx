@@ -1,5 +1,5 @@
 import '../src/Globals';
-import './AppIndex.scss';
+import './AppIndex.css';
 import { createRoot } from 'react-dom/client';
 import { Layout } from './Layout/Layout';
 import { RouterProvider } from './com/Router/RouteController';

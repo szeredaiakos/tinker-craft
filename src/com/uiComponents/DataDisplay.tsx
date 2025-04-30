@@ -1,4 +1,4 @@
-import './DataDisplay.scss';
+import './DataDisplay.css';
 
 interface IDataDisplay {
   data: {

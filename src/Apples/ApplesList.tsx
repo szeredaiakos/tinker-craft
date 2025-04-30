@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { DataDisplay } from "../com/uiComponents/DataDisplay";
 import { AppleActions, AppleStore } from "./Apples.store";
-import "./ApplesList.scss";
+import "./ApplesList.css";
 
 interface IApplesList { }
 export default function ApplesList(props: IApplesList) {

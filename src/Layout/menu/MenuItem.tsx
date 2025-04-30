@@ -1,6 +1,6 @@
 
 import { useCallback } from 'react';
-import './MenuItem.scss';
+import './MenuItem.css';
 import { RouteController } from '../../com/Router/RouteController';
 
 interface IMenuItem {

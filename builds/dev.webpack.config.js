@@ -1,6 +1,7 @@
 const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
 const indexList = require('./indexList');
+const wpModules = require('./webpack.modules');
 
 const entries = [
   ...indexList,
@@ -12,27 +13,7 @@ module.exports = {
   mode: 'development',
   devtool: false,
 
-
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      }, {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      }, {
-        test: /\.jsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
+  module: wpModules,
 
   plugins: [
     new CopyPlugin({
@@ -43,7 +24,7 @@ module.exports = {
   ],
 
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
+    extensions: [ '.tsx', '.ts', '.js', '.jsx', '.css' ],
   },
   output: {
     filename: 'bundle.js',

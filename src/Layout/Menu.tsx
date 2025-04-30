@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './Menu.scss';
+import './Menu.css';
 import { MenuController } from './MenuController';
 import { MenuItem } from './menu/MenuItem';
 
