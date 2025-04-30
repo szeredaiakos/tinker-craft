@@ -1,9 +1,16 @@
 
 
+/* clasic */
 :root {
-  --background: #222;
   --foreground: #eee;
   --brand: #f0a;
+}
+
+/* type safe-er. If it gets support from browsers / IDEs, use this */
+@property --background {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #222;
 }
 
 
