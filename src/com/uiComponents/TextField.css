@@ -1,3 +1,45 @@
 .TextField {
-  /* insert textfield styles here */
+  margin: 0;
+
+  border: 1px solid #ccc;
+
+  legend {
+    color: inherit;
+
+    p {
+      margin: 0;
+      padding: 0;
+
+    }
+
+  }
+
+  &.no-value {
+    border: 1px solid red;
+
+    legend {
+      position: relative;
+      top: 30px;
+      width: 0;
+
+    }
+
+    p {
+      color: blue;
+    }
+  }
+
+  &>input {
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
 }

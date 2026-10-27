@@ -2,17 +2,30 @@ import './TextField.css';
 
 interface IPropsTextField {
   value?: string | number | Date;
+  label?: string;
   onChange?: (value: string) => void;
   disabled?: boolean;
 }
 
 export function TextField({
   value = '',
+  label = '',
   disabled = false,
-  onChange = (value) => { },
+  onChange = () => { },
 }: IPropsTextField) {
 
   return (
-    <div className="TextField"></div>
+    <fieldset className={["TextField", !value ? 'no-value' : ''].join(' ')}>
+      <legend>
+        <p>{label}</p>
+      </legend>
+      <input
+        name={label}
+        value={String(value)}
+        type="text"
+        onChange={(e) => onChange(e.target.value)}
+        disabled={disabled}
+      />
+    </fieldset>
   );
 }

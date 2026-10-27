@@ -1,7 +1,9 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { DataDisplay } from "../com/uiComponents/DataDisplay";
 import { AppleActions, AppleStore } from "./Apples.store";
 import "./ApplesList.css";
+import { TextField } from "../com/uiComponents/TextField";
+
 
 interface IApplesList { }
 export default function ApplesList(props: IApplesList) {
@@ -32,15 +34,23 @@ export default function ApplesList(props: IApplesList) {
     AppleActions.getApples();
   }, []);
 
-
+  const [fValue, setFieldValue] = useState('');
   return (
     <div className="apples-list">
       <div className="top-24" />
       <button
         onClick={handleAddApple}
       >Clickme</button>
+
       <div className="top-24" />
       <DataDisplay data={applesData} />
+
+      <div className="top-24" />
+      <TextField
+        label='this is a neat label'
+        value={fValue}
+        onChange={setFieldValue}
+      />
     </div>
   );
 }
