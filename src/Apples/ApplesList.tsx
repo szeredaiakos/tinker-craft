@@ -34,6 +34,7 @@ export default function ApplesList(props: IApplesList) {
     AppleActions.getApples();
   }, []);
 
+  
   const [fValue, setFieldValue] = useState('');
   return (
     <div className="apples-list">
@@ -46,8 +47,7 @@ export default function ApplesList(props: IApplesList) {
       <DataDisplay data={applesData} />
 
       <div className="top-24" />
-      <div style={{ width: 200 }}>
-
+      <div style={{ width: 320 }}>
         <TextField
           label='this is a neat label'
           value={fValue}
