@@ -19,12 +19,12 @@ export const AppleStore = StoreManager.create(initialState);
 
 
 export const AppleActions = {
-  addApple: AppleStore.trigger((state, payload: AppleData) => {
-    state.apples.push(payload);
+  addApple: AppleStore.trigger((state, payload?: AppleData) => {
+    payload && state.apples.push(payload);
     return state;
   }),
   getApples: AppleStore.trigger(async (state) => {
-    const result = await Api.get();
+    const result = await Api.getApples();
     state.apples = result as AppleData[];
     return state;
   })

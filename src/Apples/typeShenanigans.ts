@@ -1,14 +1,4 @@
-class Type1 { prop = 12; }
-class Type2 { }
-class Type3 { }
-class Known { }
 
-const theConst = [
-  { name1: new Type1(), reducer: new Known() },
-  { name2: new Type2(), reducer: new Known() },
-  { name3: new Type3(), reducer: new Known() },
-  { name4: 'asd', reducer: new Known() },
-] as const;
 
 // ---------------------------
 // Type Utilities
@@ -37,9 +27,21 @@ function addActions<T extends readonly { reducer: Known;[key: string]: any }[]>(
   return {} as ExtractedTypeFromConst<T>;
 }
 
+
 // ---------------------------
-// Usage
+// Experiment
 // ---------------------------
+class Type1 { prop = 12; }
+class Type2 { }
+class Type3 { }
+class Known { }
+
+const theConst = [
+  { name1: new Type1(), reducer: new Known() },
+  { name2: new Type2(), reducer: new Known() },
+  { name3: new Type3(), reducer: new Known() },
+  { name4: 'asd', reducer: new Known() },
+] as const;
 const actions = addActions(theConst);
 
 // ✅ Fully typed:

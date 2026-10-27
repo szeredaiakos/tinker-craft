@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 
 class _StoreManager {
-  private contextStores: ContextStore<unknown>[] = [];
+  private contextStores: ContextStore<any>[] = [];
   create<TState>(initialState: TState): ContextStore<TState> {
     const newContextStore = new ContextStore<TState>(structuredClone(initialState));
     this.contextStores.push(newContextStore);

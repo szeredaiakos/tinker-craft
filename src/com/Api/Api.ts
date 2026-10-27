@@ -1,7 +1,21 @@
-
 class _Api {
-  async get() {
-    // implement yr transport here //
+  // implement yr transport here //
+
+  async getOranges() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve([
+          { cultivar: 'Jumpy', colour: 'orange', medianSize: 12, stock: 3.54 },
+          { cultivar: 'Bouncy', colour: 'yellow', medianSize: 12, stock: 3.54 },
+          { cultivar: 'Squishy', colour: 'pink', medianSize: 12, stock: 3.54 },
+          { cultivar: 'Zippy', colour: 'gold', medianSize: 12, stock: 3.54 },
+          { cultivar: 'Fuzzy', colour: 'amber', medianSize: 12, stock: 3.54 },
+        ]);
+      }, 1000);
+    });
+  }
+
+  async getApples() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve([
