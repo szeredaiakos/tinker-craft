@@ -46,11 +46,15 @@ export default function ApplesList(props: IApplesList) {
       <DataDisplay data={applesData} />
 
       <div className="top-24" />
-      <TextField
-        label='this is a neat label'
-        value={fValue}
-        onChange={setFieldValue}
-      />
+      <div style={{ width: 200 }}>
+
+        <TextField
+          label='this is a neat label'
+          value={fValue}
+          onChange={setFieldValue}
+        // disabled
+        />
+      </div>
     </div>
   );
 }

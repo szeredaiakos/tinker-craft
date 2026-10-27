@@ -15,10 +15,11 @@ export function TextField({
 }: IPropsTextField) {
 
   return (
-    <fieldset className={["TextField", !value ? 'no-value' : ''].join(' ')}>
+    <fieldset className={["TextField", !value ? 'no-value' : '', disabled ? 'disabled' : ''].join(' ')}>
       <legend>
-        <p>{label}</p>
+        <p className='label-legend-text'>{label}</p>
       </legend>
+      <div className='label-floating'></div>
       <input
         name={label}
         value={String(value)}
